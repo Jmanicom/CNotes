@@ -82,3 +82,7 @@ int main2()
     }
     return 0;
 }
+
+/* This code is very similar to what we had before, except now that celsius and fahr are declared to be floats and the forumula
+for conversion is written in a more natural way.
+*/
