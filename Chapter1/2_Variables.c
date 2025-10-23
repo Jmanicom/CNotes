@@ -77,12 +77,22 @@ int main2()
     fahr = lower;
     while (fahr <= upper){
         celsius = (5.0/9.0) * (fahr-32.0);
-        printf("%3.0f %6.0f\n", fahr, celsius);
+        printf("%3.0f %6.1f\n", fahr, celsius);
         fahr = fahr + step;
     }
     return 0;
 }
 
 /* This code is very similar to what we had before, except now that celsius and fahr are declared to be floats and the forumula
-for conversion is written in a more natural way.
+for conversion is written in a more natural way. A decimal point in a constant indicates that it is floating point and thus division doesn't
+truncate. Additionally, when 'fahr' is compared to 'upper' in the while condition, 'upper' is converted to a float. 
+
+# Text Formatting #
+Notice that the value of 'fahr' is printed with the format string set as "%3.0f", this means it will be 3 characters wide with no decimal point. Whereas
+the celsius number will be represented with 6 characters and to 1 deciaml place. Here is a list of various format strings:
+
+    %d          - print as a decimal integer
+    %f          - print as a floating point decimal number
+    %c or %s    - print a single character or a string
+    %p          - prints a pointer address (in hex)
 */
