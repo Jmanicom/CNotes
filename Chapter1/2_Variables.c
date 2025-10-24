@@ -46,8 +46,8 @@ point, i.e numbers that may have a fractional part. The range of both int and fl
 are using, C provides serveral other data types besides 'int' and 'float', including:
 
     char   - Character (a single byte)
-    short  - a short integer
-    long   - a long integer
+    short  - a short integer (2 bytes)
+    long   - a long integer (4 bytes)
     double - double-precision floating point
 
 The Reason for multipplying and dividing the way we do is beacuse integer division truncates, any fractional
