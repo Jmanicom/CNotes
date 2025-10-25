@@ -5,10 +5,12 @@ int main()
 {
     int c;
 
-    while ((c = getchar()) != EOF) {
+    while ((c = getchar()) != EOF) {  // Enter 'Ctrl + Z' for EOF
         putchar(c);
     }
     printf("\nReceived EOF (Value: %d)\n", c);
 
     return 0;
 }
+
+// COMPLETE

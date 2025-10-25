@@ -14,3 +14,5 @@ int main()
         printf("If getchar != to EOF, expressions evaluates to: %d\n", (c != EOF));
     }
 }
+
+// COMPLETE

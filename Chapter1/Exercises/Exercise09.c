@@ -8,7 +8,7 @@ int main()
     in_blank = 0;
 
     while ((c = getchar()) != EOF) {
-        if (c != ' ') {
+        if ((c != ' ') && (c != '\t')) {
             putchar(c);
             in_blank = 0;
         }
@@ -19,3 +19,5 @@ int main()
     }
     return 0;
 }
+
+// COMPLETE
