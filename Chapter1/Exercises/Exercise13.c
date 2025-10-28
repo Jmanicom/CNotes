@@ -3,33 +3,46 @@
 
 #include <stdio.h>
 
-#define MAXWORD 10  // Max word length to track
+#define MAXWORD 20  // Max word length to track
 
 int main()
 {
-    int c, in_blank, wlen;
-    in_blank = wlen = 0;
+    int ch, wlen;
+    wlen = 0;
 
-    int len[MAXWORD + 1] = {0};
+    int length[MAXWORD + 1] = {0};
 
-    while ((c = getchar()) != EOF) {
-        if ((c != ' ') && (c != '\t') && (c != '\n')) {
+    while ((ch = getchar()) != EOF) {
+        if ((ch != ' ') && (ch != '\t') && (ch != '\n')) {
             ++wlen;
         }
         else if(wlen > 0) {
             if (wlen > MAXWORD)
                 wlen = MAXWORD;
-            len[wlen]++;
+            length[wlen]++;
             wlen = 0;
         }
         }
     for (int i = 1; i <= MAXWORD; i++) {
-        if (len[i] > 0) {
-            printf("%2d | ", i);
-            for (int j = 0; j < len[i]; j++) {
-                putchar('#');
-            printf(" (%d)\n", len[i]);
-            }
+        printf("%2d | ", i);
+        while (length[i] > 0) {
+            putchar('#');
+            --length[i];
+        }
+        if (length[i] == 0) {
+            putchar('\n');
         }
     }
 }
+
+// COMPLETE
+
+/* ======================================================== 
+File Name: Exercise13.c
+Author: Joshua Manicom
+Date: October 27th, 2025
+Version: 1.5
+
+Brief Description: This program reads the command line and creates a histogram of the length from each word that was passed
+as an input. This problem is from the C Programming textbook by R&K.
+*/
