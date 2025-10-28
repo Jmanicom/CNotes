@@ -1,3 +1,14 @@
+/* ======================================================== 
+File Name: Exercise09.c
+Author: Joshua Manicom
+Date: October 27th, 2025
+Version: 1.0
+
+Brief Description: This program copies it's input and filters out multiple blank spaces and limits them to a single 
+blank space. This problem is from the C Programming textbook by R&K.
+===========================================================
+*/
+
 //Exercise 1-9. Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
 
 #include <stdio.h>

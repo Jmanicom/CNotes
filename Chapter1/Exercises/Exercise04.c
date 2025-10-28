@@ -1,3 +1,14 @@
+/* ======================================================== 
+File Name: Exercise04.c
+Author: Joshua Manicom
+Date: October 27th, 2025
+Version: 1.0
+
+Brief Description: This program converts temperatures in Celsius to Farenheit across a specified range.
+This problem is from the C Programming textbook by R&K.
+===========================================================
+*/
+
 // Exercise 1-4 : Write a program to print the corresponding Celsius to Fahrenheit table.
 
 #include <stdio.h>
