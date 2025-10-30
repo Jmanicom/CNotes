@@ -15,48 +15,49 @@ This problem is from the C Programming textbook by R&K.
 
 #include <stdio.h>
 
-#define MAXLINE 30  // Maximum input length
+#define MAXLINE 30          // Maximum input length
 
-int getline(char line[], int maxline);
-void copy(char to[], char from[]);
+int getline(char str[]);    // Return the length of the line as an int
+void copy(char to[], char from[]); // Copy a string to a new array from an exisiting one
 
 int main()
 {
-    int len;                // Current line length
-    int max;                // Maximum length seen so far
-    char line[MAXLINE];     // Current input line
-    char longest[MAXLINE];  // Longest line saved here
+    int len;                // Init a variable to keep track of current length
+    int max = 0;            // Init a variable to keep track of longest length
+    char line[MAXLINE];     // Init a char array to keep track of current line
+    char longest[MAXLINE];  // Init a char array to keep track of longest line
 
-    max = 0;
-    while ((len = getline(line, MAXLINE)) > 0) {
-        if (len > max)
+    while ((len = getline(line)) > 1) {
+        if (len > max) {
             max = len;
             copy(longest, line);
+        }
     }
-    if (max > 0)
-        printf("%s", longest);
-    return 0;
 }
 
-int getline(char s[], int lim)
+int getline(char str[])
 {
-    int c, i;
+    int c, i;               // Init a variable as a mask for the current character, and a index var
 
-    for (i = 0; i < lim - 1 && ((c = getchar()) != EOF) && (c!= '\n'); ++i)
-        s[i] = c;
-    if (c == '\n') {
-        s[i] = c;
-        ++i;
+    for (i = 0; ((c = getchar()) != EOF) && (c != '\n'); ++i) {
+        str[i] = c;         // If c is a character, add it to the str
     }
-    s[i] = '\0';
-    return i;
+    if (c = '\n') {     
+        str[i] = c;         // If c is a newline, add it to the str 
+        ++i;                // Increment i
+    }
+    str[i] = '\0';          // Add a trailing null character to the end of the str
+
+    return i;               // Return line length
 }
 
 void copy(char to[], char from[])
 {
-    int i = 0;
+    int i = 0;              // Init a index var
 
     while ((to[i] = from[i]) != '\0') {
-        ++i;
+        ++i;                // While character at [i] in str != null char, increment index
     }
 }
+
+//INCOMPLETE
